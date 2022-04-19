@@ -22,10 +22,17 @@ export const CustomForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     let items = JSON.parse(localStorage.getItem("items")) || [];
-    items.push(formData);
-    localStorage.setItem("items", JSON.stringify(items));
-    toast.success(`${formData.name} Added`);
-    navigate("../", { replace: true });
+    if (
+      items.filter((item) => item.name === formData.name).length > 0 ||
+      items.filter((item) => item.url === formData.url).length > 0
+    ) {
+      toast.error("Duplicated Link");
+    } else {
+      items.push(formData);
+      localStorage.setItem("items", JSON.stringify(items));
+      toast.success(`${formData.name} Added`);
+      navigate("../", { replace: true });
+    }
   };
 
   const handleChange = (event) => {
