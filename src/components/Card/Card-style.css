@@ -1,0 +1,61 @@
+.card-list {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.card-list-bg {
+    background-color: #f3f3f3;
+}
+
+.add-text {
+    font-size: 40px;
+}
+
+.center-header {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.vote-btn {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    font-weight: 500;
+    transition: all .2s ease-in-out;
+}
+
+.vote-btn:hover {
+    transform: scale(1.1);
+}
+
+.delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: transparent;
+    visibility: hidden;
+    transition: all .2s ease-in-out;
+}
+.card-list:hover {
+    background-color: #f3f3f3;
+}
+.card-list:hover .delete-btn {
+    visibility: visible;
+}
+
+.card-item--name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.card-item--url {
+    font-size: 14px;
+    margin-bottom: 24px;
+}
